@@ -1,0 +1,20 @@
+{
+    "title": "Astral Babes",
+    "name": "astral babe",
+    "subtitle": "Bitcoin-Native Digital Collectibles",
+    "bottomTagline": "We are love, we are light, we are spirit, we are bliss.",
+    "socialLinks": [
+        "https://discord.gg/ASfVZ8Cc6f",
+        "https://twitter.com/astral_babes",
+        "https://github.com/dannydeezy"
+    ],
+    "pricePerMintSats": 100000,
+    "maxMintPerTx": 10,
+    "FAQ": [{
+        "Q": "What is the max supply of Astral Babes?",
+        "A": "There will never be more than 10,000 Astral Babes. They will be released over time in phases."
+    },{
+        "Q": "How do I mint?",
+        "A": "See the 'How to Mint' link at the top of the page"
+    }]
+}
