@@ -11,6 +11,8 @@ body,
 #root,
 .vh100 {
   overflow-y: scroll;
+  background-color:black;
+  color: white;
 }
 
 @font-face {
@@ -23,66 +25,9 @@ body,
   src: local('Glyph'), url(./assets/fonts/autoglyphs-font/autoglyphs-500.ttf) format('truetype');
 }
 
-.lore-link {
-  color: black;
-}
-
 html {
   background-color: black;
   border: 5px solid black;
-}
-
-#title {
-  color: black;
-  text-shadow: 0 0 5px var(--orange);
-}
-
-.top-panel {
-  max-width: 400px;
-}
-
-.button {
-  width: 130px;
-}
-
-.glyph {
-  font-family: 'Glyph';
-}
-.gallery-img {
-  height: 120px;
-  margin: 20px;
-}
-
-.tile-img {
-  height: 170px;
-  margin: 20px;
-}
-
-.section {
-  border-top: 1px solid black;
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-
-.gold-gradient {
-  background: linear-gradient(to right, red 0%, var(--orange) 50%, var(--darkblue) 100%);
-  /* Mask the color to the text, and remove the rest  */
-  -webkit-background-clip: text;
-  /* Make the text fill color value transparent so the masked background color comes through */
-  -webkit-text-fill-color: transparent;
-}
-
-.black {
-  color: black !important;
-}
-
-.info-text {
-  margin: auto;
-  padding: 20px;
-}
-
-.emoji-group {
-  font-size: 30px;
 }
 
 h1 {

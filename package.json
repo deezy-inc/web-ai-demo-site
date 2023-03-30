@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@deezy-inc/web-ai": "^1.12.0",
+    "@deezy-inc/web-ai": "^1.17.0",
     "axios": "^1.3.2",
     "bootstrap": "^5.1.3",
     "copy-webpack-plugin": "^11.0.0",
