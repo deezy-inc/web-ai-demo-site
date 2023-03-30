@@ -37,8 +37,12 @@ const App = () => {
           const response = await openai.createChatCompletion({
             model: 'gpt-3.5-turbo',
             messages
+          }).catch(err => {
+            console.log(err)
+            return null
           })
           setIsLoading(false)
+          if (!response) return
           messages.push(response.choices[0].message)
           console.log(messages)
           setResponseText(response.choices[0].message.content)  
