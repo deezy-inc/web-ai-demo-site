@@ -28,6 +28,10 @@ const App = () => {
           style={{ maxWidth: '600px', textAlign: 'center' }}
         />
         <Button variant="primary" className="shadowed-orange-small mt-4 mb-5" disabled={isLoading} onClick={async () => {
+          if (!window.webln) {
+            alert('Oops, you need a WebLN compatible browser extension wallet to use this demo. Download Alby from https://getalby.com to get one!')
+            return
+          }
           setResponseText('')
           setIsLoading(true)
           messages.push({
