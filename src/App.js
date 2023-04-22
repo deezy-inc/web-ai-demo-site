@@ -3,6 +3,10 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { TailSpin } from 'react-loading-icons'
 import { openai } from '@deezy-inc/web-ai'
+// Import react social icons
+import { SocialIcon } from 'react-social-icons';
+// Import NavBar
+import Navbar from 'react-bootstrap/Navbar';
 
 import Container from 'react-bootstrap/Container';
 import './App.css';
@@ -16,6 +20,9 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false)
   return (
     <>
+      <Navbar variant="dark">
+        <SocialIcon target="_blank" url="https://github.com/deezy-inc/web-ai-demo-site" />
+      </Navbar>
       <Container className="text-center">
         <h1 className="py-3 my-5">WebAI Demo</h1>
         <Form.Label className="mb-4">Enter a prompt for ChatGPT:</Form.Label>
@@ -49,19 +56,19 @@ const App = () => {
           if (!response) return
           messages.push(response.choices[0].message)
           console.log(messages)
-          setResponseText(response.choices[0].message.content)  
+          setResponseText(response.choices[0].message.content)
         }}>
           ⚡ Submit ⚡<br />
         </Button>
         <br />
-        { isLoading ? <TailSpin /> : <></>}
-        <p style={{ maxWidth: '600px', textAlign:'center', margin:'auto'}}>
+        {isLoading ? <TailSpin /> : <></>}
+        <p style={{ maxWidth: '600px', textAlign: 'center', margin: 'auto' }}>
           {responseText ? <>
             {responseText}
           </>
-          :
-          <></>
-        }
+            :
+            <></>
+          }
         </p>
       </Container>
     </>
