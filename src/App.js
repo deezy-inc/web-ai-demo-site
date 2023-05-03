@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { TailSpin } from 'react-loading-icons'
-import { openai } from '@deezy-inc/web-ai'
+import { openai, payouts } from '@deezy-inc/web-ai'
 // Import react social icons
 import { SocialIcon } from 'react-social-icons';
 // Import NavBar
@@ -99,7 +99,7 @@ const App = () => {
               return
             }
             setIsValidLightningAddress(true)
-            openai.setPayoutLightningAddress(inputLightningAddress)
+            payouts.setPayoutLightningAddress(inputLightningAddress)
           }}
         />
       </Container>
