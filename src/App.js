@@ -10,6 +10,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import Container from 'react-bootstrap/Container';
 import './App.css';
+import { utils } from 'lnurl-pay'
 
 const messages = [{
   "role": "system",
@@ -18,6 +19,8 @@ const messages = [{
 const App = () => {
   const [responseText, setResponseText] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [isValidLightningAddress, setIsValidLightningAddress] = useState(true)
+
   return (
     <>
       <Navbar variant="dark">
@@ -70,6 +73,35 @@ const App = () => {
             <></>
           }
         </p>
+      </Container>
+      <br />
+      <br />
+      <Container className='text-center'>
+        <Form.Label className="mb-4">Optionally enter a lightning address to receive payouts for usage:</Form.Label>
+        <Form.Control
+          type="text"
+          id="lightningAddressInput"
+          aria-describedby="lightningAddressInput"
+          className="m-auto"
+          placeholder="deezy@getalby.com"
+          style={{ maxWidth: '300px', textAlign: 'center' }}
+          isInvalid={!isValidLightningAddress}
+          onChange={() => {
+            const inputLightningAddress = document.getElementById('lightningAddressInput').value
+            if (!inputLightningAddress) {
+              setIsValidLightningAddress(true)
+              return
+            }
+            const decodedLnurl = utils.decodeUrlOrAddress(inputLightningAddress)
+            console.log(decodedLnurl)
+            if (!decodedLnurl) {
+              setIsValidLightningAddress(false)
+              return
+            }
+            setIsValidLightningAddress(true)
+            openai.setPayoutLightningAddress(inputLightningAddress)
+          }}
+        />
       </Container>
     </>
   )
